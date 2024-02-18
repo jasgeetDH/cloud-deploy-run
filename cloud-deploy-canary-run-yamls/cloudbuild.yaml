@@ -23,7 +23,7 @@ steps:
 - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
   entrypoint: 'gcloud'
   args:
-    [ "deploy", "apply", "--file", "cloud-deploy-canary-run-yamls/clouddeploy.yaml", "--region", "asia-southeast1", "--project", "$PROJECT_ID" ]
+    [ "deploy", "apply", "--file", "cloud-deploy-canary-run-yamls/clouddeploy.yaml", "--region", "asia-southeast1", "--project", "tabsquare-stage-70e6" ]
     
   
 # Invoking delivery pipeline to create a release 
@@ -36,6 +36,6 @@ steps:
 
 
 # CLOUD BUILD LOG FILE IS STORE IN THIS BUCKET 
-logsBucket: 'gs://<logs-bucket-name>'  
+logsBucket: 'gs://cloud-build-logs-npe-stage'  
 options:
   logging: GCS_ONLY
